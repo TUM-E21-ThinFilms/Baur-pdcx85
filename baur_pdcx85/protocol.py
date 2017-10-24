@@ -17,7 +17,7 @@ from slave.protocol import Protocol
 import logging
 
 class BaurProtocol(Protocol):
-    def __init__(self, logger, echo=None, msg_term='\r', resp_data_sep='=', resp_term='\r', encoding='ascii', ):
+    def __init__(self, logger, echo=None, msg_term='\r', resp_data_sep='=', resp_term='\r', encoding='ascii' ):
         self.echo = echo
         self.resp_data_sep = resp_data_sep
         self.msg_term = msg_term

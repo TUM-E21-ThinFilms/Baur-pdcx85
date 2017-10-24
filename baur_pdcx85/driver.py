@@ -20,10 +20,7 @@ import time
 
 class BaurDriver(Driver):
     # Handling Base Classes
-    def __init__(self, transport, timer=None, protocol=None):
-        if protocol is None:
-            protocol = BaurProtocol()
-
+    def __init__(self, transport, protocol, timer=None):
         if timer is None:
             timer = time
 
