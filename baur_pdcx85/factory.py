@@ -34,7 +34,7 @@ class BaurFactory:
         gun.initialize(4000, 1, 1, 6)  # steps, acc, vstart, vend
         return gun
 
-    def create_z(self):
+    def create_z(self, device=None, logger=None):
 
         if logger is None:
             logger = get_sputter_logger('Motor Z', 'motor_z.log')
@@ -46,7 +46,7 @@ class BaurFactory:
         z_motor.initialize(4000, 10, 30, 30)
         return z_motor
 
-    def create_x(self):
+    def create_x(self, device=None, logger=None):
 
         if logger is None:
             logger = get_sputter_logger('Motor X', 'motor_x.log')
