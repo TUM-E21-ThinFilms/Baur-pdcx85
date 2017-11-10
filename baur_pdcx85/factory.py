@@ -56,4 +56,4 @@ class BaurFactory:
 
         x_motor = BaurDriver(Serial(device, 9600, 8, 'N', 1, 1), BaurProtocol(logger))
         x_motor.initialize(4000, 1, 1, 1)
-        return z_motor
+        return x_motor
