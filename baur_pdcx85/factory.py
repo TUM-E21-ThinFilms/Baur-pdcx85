@@ -31,7 +31,7 @@ class BaurFactory:
             device = Ports().get_port(Ports.DEVICE_MOTOR_C)
 
         gun = BaurDriver(Serial(device, 9600, 8, 'N', 1, 1), BaurProtocol(logger))
-        gun.initialize(4000, 1, 1, 6)  # steps, acc, vstart, vend
+        gun.initialize(4000, 1, 1, 10)  # steps, acc, vstart, vend
         return gun
 
     def create_z(self, device=None, logger=None):
