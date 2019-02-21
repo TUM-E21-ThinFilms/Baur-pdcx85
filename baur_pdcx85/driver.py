@@ -15,7 +15,8 @@
 
 from slave.driver import Driver, Command
 from slave.types import String, BitSequence
-from protocol import BaurProtocol
+from baur_pdcx85.protocol import BaurProtocol
+
 import time
 
 class BaurDriver(Driver):
