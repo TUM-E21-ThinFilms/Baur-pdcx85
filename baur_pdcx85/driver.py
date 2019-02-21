@@ -27,7 +27,8 @@ class BaurDriver(Driver):
 
         if timer is None:
             timer = time
-        self._timer = timer
+
+        self.timer = timer
 
         self.protocol = protocol
         # Commands:
