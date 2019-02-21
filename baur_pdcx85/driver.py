@@ -21,12 +21,13 @@ import time
 class BaurDriver(Driver):
     # Handling Base Classes
     def __init__(self, transport, protocol, timer=None):
+        super(BaurDriver, self).__init__(transport, protocol)
+
+        assert isinstance(protocol, BaurProtocol)
+
         if timer is None:
             timer = time
-
-        self.timer = timer
-
-        super(BaurDriver, self).__init__(transport, protocol)
+        self._timer = timer
 
         self.protocol = protocol
         # Commands:
@@ -46,15 +47,15 @@ class BaurDriver(Driver):
             ])
         ))
 
-    def initialize(self, step=4000, accel=1, velstart=1, velend=1):
-        self.timer.sleep(0.5)
+    def initialize(self, step=4000, acceleration=1, v_start=1, v_end=1):
+        self.timer.sleep(0.1)
         self.steps(step)
-        self.timer.sleep(0.5)
-        self.acc(accel)
-        self.timer.sleep(0.5)
-        self.vstart(velstart)
-        self.timer.sleep(0.5)
-        self.vend(velend)
+        self.timer.sleep(0.1)
+        self.acc(acceleration)
+        self.timer.sleep(0.1)
+        self.vstart(v_start)
+        self.timer.sleep(0.1)
+        self.vend(v_end)
         self.clear()
 
     def is_connected(self):
